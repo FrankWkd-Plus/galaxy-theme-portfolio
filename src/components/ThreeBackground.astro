@@ -52,15 +52,15 @@
 
     // パーティクルシステムの作成
     const particlesGeometry = new THREE.BufferGeometry();
-    const particlesCount = 5000;
+    const particlesCount = 7500;
     const posArray = new Float32Array(particlesCount * 3);
     const colorArray = new Float32Array(particlesCount * 3);
 
     for (let i = 0; i < particlesCount * 3; i += 3) {
-      // ランダムな位置
-      posArray[i] = (Math.random() - 0.5) * 100;
-      posArray[i + 1] = (Math.random() - 0.5) * 100;
-      posArray[i + 2] = (Math.random() - 0.5) * 100;
+      // ランダムな位置 (视场内密度充实且不臃肿)
+      posArray[i] = (Math.random() - 0.5) * 70;
+      posArray[i + 1] = (Math.random() - 0.5) * 70;
+      posArray[i + 2] = (Math.random() - 0.5) * 70;
 
       // ランダムな色（紫、ピンク、青の系統）
       const colorType = Math.random();
@@ -75,9 +75,9 @@
         colorArray[i + 1] = 0.28;
         colorArray[i + 2] = 0.60;
       } else {
-        // 青
+        // 青 / シアン
         colorArray[i] = 0.23;
-        colorArray[i + 1] = 0.51;
+        colorArray[i + 1] = 0.65;
         colorArray[i + 2] = 0.96;
       }
     }
@@ -85,12 +85,40 @@
     particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
     particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
 
+    // 创建圆形发光粒子纹理
+    function createCircleTexture(): THREE.CanvasTexture {
+      const canvas = document.createElement('canvas');
+      canvas.width = 64;
+      canvas.height = 64;
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+        gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        gradient.addColorStop(0.25, 'rgba(255, 255, 255, 0.9)');
+        gradient.addColorStop(0.55, 'rgba(255, 255, 255, 0.25)');
+        gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.arc(32, 32, 32, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.needsUpdate = true;
+      return texture;
+    }
+
+    const circleTexture = createCircleTexture();
+
     // パーティクル用マテリアル
     const particlesMaterial = new THREE.PointsMaterial({
-      size: 0.15,
+      size: 0.28,
+      map: circleTexture,
       vertexColors: true,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.85,
+      depthWrite: false,
       blending: THREE.AdditiveBlending,
     });
 
@@ -172,6 +200,9 @@
     // Three.jsオブジェクトのクリーンアップ
     if (particlesMesh) {
       particlesMesh.geometry.dispose();
+      if (particlesMesh.material.map) {
+        particlesMesh.material.map.dispose();
+      }
       particlesMesh.material.dispose();
       particlesMesh = null;
     }

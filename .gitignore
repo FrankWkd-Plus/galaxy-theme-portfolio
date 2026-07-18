@@ -1,0 +1,59 @@
+# ==========================================
+# 编译产物 & 临时文件 (C/C++ / Web 等)
+# ==========================================
+*.o
+*.obj
+*.out
+*.exe
+*.gch
+*.d
+*.a
+*.lib
+*.so
+*.dll
+*.dylib
+*.log
+
+# Build 文件夹
+build/
+dist/
+node_modules/
+
+# ==========================================
+# 编辑器 & IDE 配置 (Vim / VS Code / JetBrains)
+# ==========================================
+# Vim 临时文件
+.*.swp
+.*.swo
+*~
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+
+# JetBrains (Clion / WebStorm 等)
+.idea/
+*.iws
+*.iml
+
+# ==========================================
+# 操作系统特有垃圾文件
+# ==========================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.fuse_hidden*
+.directory
