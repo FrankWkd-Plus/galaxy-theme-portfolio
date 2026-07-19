@@ -11,9 +11,15 @@ const sortedPosts = allBlogPosts.sort((a, b) =>
 ---
 
 <BaseLayout
-  title="Blog - Darkness"
-  description="Articles about web development, Three.js, and dark design"
+  title="Blog - Outwardly Verse"
+  description="Redirecting to Outwardly Verse Blog..."
 >
+  <head>
+    <meta http-equiv="refresh" content="0;url=https://blog.frankwkd2026.dpdns.org/" />
+    <script is:inline>
+      window.location.href = "https://blog.frankwkd2026.dpdns.org/";
+    </script>
+  </head>
   <Navigation />
 
   <main class="blog-page">

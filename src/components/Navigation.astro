@@ -8,16 +8,16 @@ const relativePath = currentPath.replace(base.slice(0, -1), '') || '/';
 
 <nav class="nav">
   <div class="nav-container">
-    <a href={base} class="logo">DARKNESS</a>
+    <a href={base} class="logo">Outwardly Verse</a>
 
     <div class="nav-links">
       <a href={base} class:list={['nav-link', { active: relativePath === '/' }]}>
         Home
       </a>
-      <a href={`${base}blog/`} class:list={['nav-link', { active: relativePath.startsWith('/blog') }]}>
+      <a href="https://blog.frankwkd2026.dpdns.org/" target="_blank" rel="noopener noreferrer" class="nav-link">
         Blog
       </a>
-      <a href={`${base}projects/`} class:list={['nav-link', { active: relativePath.startsWith('/projects') }]}>
+      <a href="https://github.com/FrankWkd-Plus?tab=repositories" target="_blank" rel="noopener noreferrer" class="nav-link">
         Projects
       </a>
       <a href={`${base}about/`} class:list={['nav-link', { active: relativePath.startsWith('/about') }]}>
@@ -40,8 +40,8 @@ const relativePath = currentPath.replace(base.slice(0, -1), '') || '/';
 <div class="mobile-menu" id="mobile-menu">
   <div class="mobile-menu-content">
     <a href={base} class:list={['mobile-nav-link', { active: relativePath === '/' }]}>Home</a>
-    <a href={`${base}blog/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/blog') }]}>Blog</a>
-    <a href={`${base}projects/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/projects') }]}>Projects</a>
+    <a href="https://blog.frankwkd2026.dpdns.org/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Blog</a>
+    <a href="https://github.com/FrankWkd-Plus?tab=repositories" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">Projects</a>
     <a href={`${base}about/`} class:list={['mobile-nav-link', { active: relativePath.startsWith('/about') }]}>About</a>
   </div>
 </div>

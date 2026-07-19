@@ -10,9 +10,15 @@ const otherProjects = allProjects.filter(p => !p.data.featured);
 ---
 
 <BaseLayout
-  title="Projects - Darkness"
-  description="Portfolio of dark-themed web projects and experiments"
+  title="Projects - Outwardly Verse"
+  description="Redirecting to Outwardly Verse Projects on GitHub..."
 >
+  <head>
+    <meta http-equiv="refresh" content="0;url=https://github.com/FrankWkd-Plus?tab=repositories" />
+    <script is:inline>
+      window.location.href = "https://github.com/FrankWkd-Plus?tab=repositories";
+    </script>
+  </head>
   <Navigation />
 
   <main class="projects-page">

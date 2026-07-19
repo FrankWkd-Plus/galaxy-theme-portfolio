@@ -1,0 +1,74 @@
+# ==========================================
+# 1. C/C++ 编译产物与可执行文件
+# ==========================================
+*.o
+*.obj
+*.out
+*.exe
+*.out
+*.gch
+*.d
+*.pdb
+*.ilk
+
+# 常见构建目录
+build/
+CMakefiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ==========================================
+# 2. 编辑器与系统专属文件
+# ==========================================
+# Vim 临时文件
+.*.swp
+.*.swo
+.swp
+.swo
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# macOS 系统垃圾
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# JetBrains (Clion / WebStorm 等)
+.idea/
+*.iws
+
+# ==========================================
+# 3. 依赖包、环境与打包（Node/Web/小程序等）
+# ==========================================
+node_modules/
+jspm_packages/
+.npm/
+.yarn/
+yarn-error.log
+
+# 编译/分发产物
+dist/
+out/
+.next/
+.nuxt/
+
+# 微信小程序/uniapp 等本地编译缓存
+.sourcemap/
+.unpackage/
+
+# ==========================================
+# 4. 本地配置与敏感数据（绝对不能上云）
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+*.local
+*.secrets
