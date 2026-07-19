@@ -1,18 +1,18 @@
 /* Global styles for dark abyss theme */
 :root {
   /* Color Palette - Developer Dark Theme */
-  --color-bg-dark: #0F172A;
-  --color-bg-darker: #020617;
-  --color-bg-card: #1E293B;
+  --color-bg-dark: #030712;
+  --color-bg-darker: #000000;
+  --color-bg-card: #0B132B;
   --color-primary: #3B82F6;
   --color-accent-purple: #8B5CF6;
   --color-accent-pink: #EC4899;
   --color-accent-blue: #3B82F6;
   --color-accent-cyan: #06B6D4;
-  --color-text: #F1F5F9;
+  --color-text: #F8FAFC;
   --color-text-dim: #94A3B8;
-  --color-border: #334155;
-  --color-shadow: rgba(59, 130, 246, 0.3);
+  --color-border: #1E293B;
+  --color-shadow: rgba(59, 130, 246, 0.2);
 
   /* Typography */
   --font-heading: 'Space Grotesk', system-ui, sans-serif;

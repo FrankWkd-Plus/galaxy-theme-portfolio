@@ -70,8 +70,6 @@ const base = import.meta.env.BASE_URL;
     font-weight: 700;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.6));
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
   }
 
   .hero-title {
@@ -89,15 +87,18 @@ const base = import.meta.env.BASE_URL;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientFlow 4s ease infinite, glowShimmer 4s ease-in-out infinite;
+    animation: gradientFlow 4s ease infinite, cleanBreathe 3s ease-in-out infinite;
   }
 
-  @keyframes glowShimmer {
+  /* 纯净呼吸闪烁：无外发光雾，干净利落 */
+  @keyframes cleanBreathe {
     0%, 100% {
-      filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.45));
+      opacity: 1;
+      transform: scale(1);
     }
     50% {
-      filter: drop-shadow(0 0 32px rgba(168, 85, 247, 0.75)) drop-shadow(0 0 45px rgba(236, 72, 153, 0.45));
+      opacity: 0.75;
+      transform: scale(0.995);
     }
   }
 
@@ -218,7 +219,7 @@ const base = import.meta.env.BASE_URL;
     position: absolute;
     border-radius: 50%;
     filter: blur(80px);
-    opacity: 0.4;
+    opacity: 0.15;
   }
 
   .glow-1 {
