@@ -23,6 +23,19 @@
 
 ---
 
+<table align="center" width="100%">
+  <tr>
+    <td align="center" width="50%"><img src="https://github.com/user-attachments/assets/fac1d51c-bf8a-4687-877c-9e720e7b561b" width="100%" alt="Theme Preview 1" /></td>
+    <td align="center" width="50%"><img src="https://github.com/user-attachments/assets/0dac5235-68c0-4dc8-8ba3-cabe272175e6" width="100%" alt="Theme Preview 2" /></td>
+  </tr>
+  <tr>
+    <td align="center" width="50%"><img src="https://github.com/user-attachments/assets/1be6135f-5a74-43a1-bab4-1da366d44158" width="100%" alt="Theme Preview 3" /></td>
+    <td align="center" width="50%"><img src="https://github.com/user-attachments/assets/8ee30aa2-1097-4d5a-a9b5-fced15c20423" width="100%" alt="Theme Preview 4" /></td>
+  </tr>
+</table>
+
+---
+
 ## ✨ Features
 
 - 🌌 **3D Particle Cosmic Background**: 5,000+ feather-glow circular particles generated dynamically with Three.js, featuring smooth mouse interaction and sinusoidal breathing animation.
