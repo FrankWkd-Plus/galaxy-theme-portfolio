@@ -1,7 +1,6 @@
 <div align="center">
-  <h1>🌌 星系风格个人介绍主页</h1>
+  <h1>🌌 星系风格个人介绍主页 | Galaxy Theme Portfolio</h1>
 </div>
-
 
 <p align="center">
   <strong>基于 Astro 6 + Three.js 打造的高颜值、沉浸式暗黑星空个人主页 & 作品集</strong>
@@ -15,6 +14,8 @@
 </p>
 
 <p align="center">
+  <a href="README.md"><strong>🇨🇳 中文文档</strong></a> ·
+  <a href="README_EN.md"><strong>🇺🇸 English</strong></a> ·
   <a href="https://ai-work-team-demo.pages.dev"><strong>🔮 DEMO</strong></a> ·
   <a href="#快速开始"><strong>🚀 快速开始</strong></a> ·
   <a href="#网站内容配置"><strong>📔 网站配置</strong></a>
@@ -24,7 +25,7 @@
 
 ## ✨ 功能
 
-- 🌌 **3D 粒子梦幻星空**：基于 Three.js 动态生成的羽化圆形发光粒子，随鼠标平滑交互。
+- 🌌 **3D 粒子梦幻星空**：基于 Three.js 动态生成的羽化圆形发光粒子，随鼠标平滑交互与正弦波明暗呼吸。
 - 🧪 **4 套实验性暗黑主题**：顶部右侧 Labs 图标一键切换【幽蓝】、【翡翠】、【紫粉】与【琥珀金】主题，3D 粒子色彩无缝联动。
 - 💫 **360° 流水转圈按钮**：核心按钮自带顺时针激光流光边框，搭配文字白色透明荧光笔划过动画。
 - 📱 **单屏与自适应响应式**：首页锁定单屏极简展示，About 页面提供卡片化丰富履历。
@@ -40,8 +41,8 @@
 点击本仓库右上角的 **Fork** 按钮复制到您自己的 GitHub 账号下，或在本地克隆：
 
 ```bash
-git clone https://github.com/FrankWkd-Plus/My-Personal-Introduction.git
-cd My-Personal-Introduction
+git clone https://github.com/FrankWkd-Plus/galaxy-theme-portfolio.git
+cd galaxy-theme-portfolio
 npm install
 ```
 
