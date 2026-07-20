@@ -165,7 +165,6 @@ const base = import.meta.env.BASE_URL;
   }
 
   .btn {
-    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -174,84 +173,43 @@ const base = import.meta.env.BASE_URL;
     font-size: 1rem;
     font-weight: 600;
     font-family: var(--font-body);
-    border-radius: 0.6rem;
+    border-radius: 0.5rem;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.2s ease;
-    overflow: hidden;
-    z-index: 1;
-    border: none;
-  }
-
-  /* 描边顺时针流水转圈特效 (360度旋转锥形光束) */
-  .btn::before {
-    content: '';
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0%,
-      transparent 70%,
-      var(--color-primary) 85%,
-      var(--color-accent-purple) 95%,
-      #ffffff 100%
-    );
-    animation: borderSpin 3.5s linear infinite;
-    z-index: -2;
-  }
-
-  /* 按钮内层遮罩：精确露出 1.5px 宽度的流水描边 */
-  .btn::after {
-    content: '';
-    position: absolute;
-    inset: 1.5px;
-    border-radius: 0.5rem;
-    z-index: -1;
-    transition: background 0.2s ease;
-  }
-
-  /* About Me - 实色天蓝 */
-  .btn-primary::after {
-    background: var(--color-primary);
-  }
-
-  .btn-primary:hover::after {
-    background: #2563EB;
   }
 
   .btn-primary {
-    color: #FFFFFF;
+    background: var(--color-primary);
+    color: white;
+    border: none;
     box-shadow: 0 4px 14px var(--color-shadow);
   }
 
   .btn-primary:hover {
+    background: #2563EB;
     box-shadow: 0 6px 20px var(--color-shadow);
   }
 
-  /* Read Blog - 完全透明背景 (不带黑色) */
-  .btn-secondary::after {
-    background: transparent;
-  }
-
-  .btn-secondary:hover::after {
-    background: rgba(59, 130, 246, 0.12);
-  }
-
   .btn-secondary {
-    color: var(--color-text);
     background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
   }
 
-  @keyframes borderSpin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+  .btn-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--color-primary);
+  }
+
+  .btn-primary svg,
+  .btn-secondary svg {
+    transition: transform 0.2s ease;
+  }
+
+  .btn-primary:hover svg,
+  .btn-secondary:hover svg {
+    transform: translateX(3px);
   }
 
   .btn-primary svg,
