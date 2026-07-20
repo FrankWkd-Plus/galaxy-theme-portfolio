@@ -170,14 +170,14 @@ const base = import.meta.env.BASE_URL;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.875rem 1.75rem;
+    padding: 0.875rem 1.85rem;
     font-size: 1rem;
     font-weight: 600;
     font-family: var(--font-body);
-    border-radius: 0.6rem;
+    border-radius: 0.9rem;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
     z-index: 1;
     border: none;
@@ -203,39 +203,68 @@ const base = import.meta.env.BASE_URL;
     z-index: -2;
   }
 
-  /* 按钮内层遮罩：精确露出 1.5px 宽度的流水描边 */
+  /* iOS 液态玻璃内层遮罩：高透明度模糊 + 精致高光 */
   .btn::after {
     content: '';
     position: absolute;
     inset: 1.5px;
-    border-radius: 0.5rem;
+    border-radius: 0.8rem;
     z-index: -1;
-    transition: background 0.3s ease;
+    backdrop-filter: blur(20px) saturate(190%);
+    -webkit-backdrop-filter: blur(20px) saturate(190%);
+    transition: all 0.3s ease;
   }
 
+  /* About Me - iOS 液态天蓝玻璃 */
   .btn-primary::after {
-    background: var(--color-primary);
+    background: rgba(59, 130, 246, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45);
   }
 
   .btn-primary:hover::after {
-    background: #2563EB;
+    background: rgba(59, 130, 246, 0.38);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .btn-primary {
-    color: white;
-    box-shadow: 0 4px 18px var(--color-shadow);
+    color: #FFFFFF;
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.4),
+      0 8px 25px rgba(59, 130, 246, 0.35);
   }
 
+  .btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      inset 0 1px 2px 0 rgba(255, 255, 255, 0.6),
+      0 12px 35px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Read Blog - iOS 液态冰晶透光玻璃 */
   .btn-secondary::after {
-    background: var(--color-bg-dark);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.3);
   }
 
   .btn-secondary:hover::after {
-    background: rgba(59, 130, 246, 0.15);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
   }
 
   .btn-secondary {
     color: var(--color-text);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+      0 8px 25px rgba(0, 0, 0, 0.35);
+  }
+
+  .btn-secondary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+      inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.4),
+      0 12px 35px rgba(0, 0, 0, 0.45);
   }
 
   @keyframes borderSpin {
